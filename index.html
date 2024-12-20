@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Multi-step form</title>
+<link rel="stylesheet" href="./css/style.css">
+<link rel="stylesheet" href="./css/responsive.css">
+</head>
+<body>
+  <main>
+    <section class="main-container">
+      <article class="side-bar">
+        <!-- step 1 -->
+         <picture class="picture">
+          <source srcset="./assets/images/bg-sidebar-desktop.svg" media="(min-width:850px)">
+          <img src="./assets/images/bg-sidebar-mobile.svg" alt="background image">
+         </picture>
+         
+         <div class="side-container-holder">
+
+        
+        <div class="step-container">
+          <div class="btn-box">
+            <button class="step-btn" id="step-1"><a href="#personal-info">1</a></button>
+          </div>
+
+          <div class="step-content">
+            <p class="step-p">STEP 1</p>
+            <h2 class="step-description">YOUR INFO</h2>
+          </div>
+        </div>
+
+        <!-- step 2 -->
+         <div class="step-container">
+          <div class="btn-box">
+            <button class="step-btn" id="step-2"><a href="#">2</a></button>
+          </div>
+
+          <div class="step-content">
+            <p class="step-p">STEP 2</p>
+            <h2 class="step-description">SELECT PLAN</h2>
+          </div>
+        </div>
+
+        <!-- step 3 -->
+         <div class="step-container">
+          <div class="btn-box">
+            <button class="step-btn" id="step-3"><a href="#">3</a></button>
+          </div>
+
+          <div class="step-content">
+            <p class="step-p">STEP 3</p>
+            <h2 class="step-description">ADD-ONS</h2>
+          </div>
+        </div>
+
+        <!-- step 4 -->
+         <div class="step-container">
+          <div class="btn-box">
+            <button class="step-btn" id="step-4"><a href="#">4</a></button>
+          </div>
+
+          <div class="step-content">
+            <p class="step-p">STEP 4</p>
+            <h2 class="step-description">SUMMARY</h2>
+          </div>
+        </div>
+
+         </div>
+      </article>
+      <!-- THE FORM CONTAINER WILL HAVE DIFFERENT CONTAINERS VISIBLE AT DIFFERENT TIMES -->
+
+       <!-- Step 1 start -->
+      <article class="main-content" id="personal-info">
+        <h2 class="primary-heading">Personal info</h2>
+        <p class="content-description">Please provide your name, email address, and phone number.</p>
+        <form action="#" id="form" class="form" novalidate>
+          <label for="username">Name</label>
+          <input type="text" id="username" name="name" placeholder="e.g. Stephen King" required>
+          <!-- email -->
+           <label for="email">Email Address</label>
+           <input type="email" name="email" id="email" required placeholder=" e.g. stephenking@lorem.com">
+           <!-- phone number -->
+            <label for="tel-number"> Phone Number</label>
+            <input type="tel" name="tel-number" id="tel-number" placeholder=" e.g. +1 234 567 890" required>
+        </form>
+      </article>
+      
+      <aside class="btn-container">
+        <button class="btn btn--next"><a href="#">Next Step</a></button>
+      </aside>
+        <!-- Step 1 end -->
+
+      <!-- step 2 start -->
+      <article class="main-content hide" id="select-plan">
+        <h2 class="primary-heading"> Select your plan</h2>
+        <p class="content-description"> You have the option of monthly or yearly billing.</p>
+        <div class="plan-container">
+          <!-- box 1 -->
+          <div class="plan-box">
+            <img src="./assets/images/icon-arcade.svg" alt="Arcade icon">
+            <div>
+              <h3 class="plan-title">Arcade</h3>
+              <!-- monthly -->
+              <p class="monthly-price"> $9/mo</p>
+              <!-- yearly -->
+               <p class="yearly-price">$90/yr</p>
+               <p class="yearly-duration">2 months free</p>
+            </div>
+            <!-- div containing price end -->
+          </div>
+          <!-- box 1 end -->
+        <div class="plan-box">
+          <img src="./assets/images/icon-advanced.svg" alt="icon">
+          <div>
+            <h3 class="plan-title">Advanced</h3>
+            <!-- monthly -->
+            <p class="monthly-price">$12/mo</p>
+            <!-- yearly -->
+               <p class="yearly-price">$120/yr</p>
+               <p class="yearly-duration">2 months free</p>
+          </div>
+          <!-- end for price div -->
+        </div>
+      <!-- box 2 end -->
+
+        <div class="plan-box">
+          <img src="./assets/images/icon-pro.svg" alt="game icon">
+           <div>
+            <h3 class="plan-title">Pro</h3>
+            <p class="monthly-price">$15/mo</p>
+            <!-- yearly -->
+               <p class="yearly-price">$150/yr</p>
+               <p class="yearly-duration">2 months free</p>
+          </div>
+          <!-- price div end -->
+        </div>
+          <!-- box 3 ends -->
+        </div>
+        <!-- monthly/yearly -->
+         <input type="radio" name="" id="">
+          <!-- Monthly
+  Yearly -->
+      </article>
+      <aside class="btn-box hide">
+        <button class="btn btn--back"><a href="#"> Go Back</a></button>
+        <button class="btn btn--next"><a href="#"> Next Step</a></button>
+      </aside>
+       <!-- Step 2 end -->
+      <!-- step 3 start -->
+      <article class="main-content hide">
+        <h2 class="primary-heading">  Pick add-ons</h2>
+        <p class="content-description">Add-ons help enhance your gaming experience.</p>
+
+        <!-- section -->
+         <section class="add-on-choice hide">
+          <!-- online service -->
+            <div class="add-on">
+              <!-- checkbox -->
+              <div add-on-check>
+                <input type="checkbox" name="checkbox" id="add-service">
+              </div>
+              <!-- text -->
+              <div class="add-on-text">
+                <h3 class="add-on-title"> Online service</h3>
+                <p class="add-on-p">Access to multiplayer games</p>
+              </div>
+              <!-- bonus -->
+              <div class="add-on-bonus">
+                <!-- monthly -->
+                <p class="monthly-bonus">+$1/mo</p>
+                <!-- yearly -->
+                  <p class="yearly-bonus">+$10/yr</p>
+              </div>
+ 
+            </div>
+            <!-- larger storage -->
+              <div class="add-on">
+              <!-- checkbox -->
+              <div add-on-check>
+                <input type="checkbox" name="checkbox" id="add-service">
+              </div>
+              <!-- text -->
+              <div class="add-on-text">
+                <h3 class="add-on-title"> Larger storage</h3>
+                <p class="add-on-p">Extra 1TB of cloud save</p>
+              </div>
+              <!-- bonus -->
+              <div class="add-on-bonus">
+                <p class="monthly-bonus">+$2/mo</p>
+                <!-- yearly bonus -->
+                 <p class="yearly-bonus">+$20/yr</p>
+              </div>
+            </div>
+            <!-- customizable profile -->
+              <div class="add-on">
+              <!-- checkbox -->
+              <div add-on-check>
+                <input type="checkbox" name="checkbox" id="add-service">
+              </div>
+              <!-- text -->
+              <div class="add-on-text">
+                <h3 class="add-on-title"> Customizable Profile</h3>
+                <p class="add-on-p">  Custom theme on your profile</p>
+              </div>
+              <!-- bonus -->
+              <div class="add-on-bonus">
+               <!-- monthly -->
+                  <p class="monthly-bonus">+$2/mo</p>
+               <!-- yearly -->
+                 <p class="yearly-bonus">+$20/mo</p>
+              </div>
+            </div>
+         </section>
+      </article>
+      <!-- <aside class="btn-box">
+        <button class="btn btn--back"><a href="#">Go Back</a></button>
+        <button class="btn btn--next"><a href="#">Next Step</a></button>
+      </aside> -->
+      <!-- step 3 ends -->
+      <!-- step 4 start -->
+      <article class="main-content hide">
+        <h2 class="primary-heading">Finishing up</h2>
+        <p class="content-description">Double-check everything looks OK before confirming.</p>
+        <!-- section to contain finishing details -->
+         <section class="">
+          <!-- monthly -->
+          <div class="">
+            <h4>Arcade(Monthly)</h4>
+            <p><a href="#">change</a></p>
+          </div>
+          <div>
+            <p></p>
+          </div>
+         </section>
+      </article>
+
+      <!-- <aside class="btn-box hide">
+        <button class="btn btn--back"><a href="#">Go Back</a></button>
+        <button class="btn btn--next"><a href="#">Confirm</a></button>
+      </aside> -->
+      <!-- steps end -->
+    </section>
+  </main>
+
+  <!-- Step 4 start -->
+
+  <!-- Dynamically add subscription and add-on selections here -->
+
+  <!-- Total (per month/year) -->
+
+  <!-- Step 4 end -->
+
+  <!-- Step 5 start -->
+
+  <!-- Thank you!
+
+  Thanks for confirming your subscription! We hope you have fun 
+  using our platform. If you ever need support, please feel free 
+  to email us at support@loremgaming.com. -->
+
+  <!-- Step 5 end -->
+  
+  <footer class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="https://www.x.com/france_ssa">Ejiro Frances</a>.
+  </footer>
+
+  <script src="./js/script.js"></script>
+</body>
+</html>

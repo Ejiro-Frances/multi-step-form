@@ -1,0 +1,32 @@
+@media (min-width: 85rem) {
+  .main-container {
+    display: grid;
+    grid-template-columns: 30rem 1fr;
+    min-height: 100vh;
+  }
+
+  .side-bar {
+    all: unset;
+    grid-row: 1 / span 2;
+    /* display: flex; */
+    /* flex-direction: column; */
+  }
+  .side-container-holder {
+    /* display: flex; */
+    transform: unset;
+    flex-direction: column;
+    align-items: flex-start;
+    border: 1px solid black;
+  }
+  .step-content {
+    display: block;
+  }
+  /* .btn-container {
+  } */
+  .main-content {
+    transform: unset;
+    border-radius: unset;
+    padding: 3rem 4rem;
+    max-width: 100%;
+  }
+}

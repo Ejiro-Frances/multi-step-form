@@ -1,0 +1,193 @@
+@font-face {
+  font-family: "ubuntu";
+  src: url("../assets/fonts/Ubuntu-Regular.ttf");
+  src: url("../assets/fonts/Ubuntu-Medium.ttf"),
+    url("../assets/fonts/Ubuntu-Bold.ttf");
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+a:link,
+a:visited,
+a:hover,
+a:focus {
+  text-decoration: none;
+  color: inherit;
+  display: inline-block;
+  font: inherit;
+  font-family: inherit;
+  font-weight: inherit;
+}
+ul {
+  list-style: none;
+}
+button {
+  font-size: inherit;
+  font-family: inherit;
+}
+img {
+  display: inline-block;
+}
+html {
+  font-size: 62.5%;
+}
+:root {
+  /* ### Primary */
+
+  --marine-blue: hsl(213, 96%, 18%);
+  --purplish-blue: hsl(243, 100%, 62%);
+  --pastel-blue: hsl(228, 100%, 84%);
+  --light-blue: hsl(206, 94%, 87%);
+  --strawberry-red: hsl(354, 84%, 57%);
+
+  /* ### Neutral */
+
+  -cool-gray: hsl(231, 11%, 63%);
+  --light-gray: hsl(229, 24%, 87%);
+  --magnolia: hsl(217, 100%, 97%);
+  --alabaster: hsl(231, 100%, 99%);
+  --white: hsl(0, 0%, 100%);
+}
+
+body {
+  font-family: "ubuntu";
+  font-weight: 400;
+  background: var(--magnolia);
+  color: var(--marine-blue);
+  font-size: 1.6rem;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.hide {
+  display: none;
+}
+.main-container {
+  /* background: var(--white); */
+  max-width: 100rem;
+  /* padding: 2rem; */
+}
+/* the step container */
+.side-bar {
+  /* background-image: url("../assets/images/bg-sidebar-mobile.svg");
+  background-size: cover;
+  background-repeat: no-repeat; */
+  width: 100vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  /* align-items: center; */
+  gap: 2rem;
+}
+
+.picture {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+}
+.picture img {
+  width: 100%;
+  height: 100%;
+}
+.side-container-holder {
+  position: absolute;
+  top: 0;
+  transform: translateY(100%);
+}
+.step-content {
+  display: none;
+}
+/* style the buttons for the step */
+.side-container-holder {
+  display: flex;
+  gap: 2rem;
+}
+.step-btn {
+  background: var(--purplish-blue);
+  color: var(--light-blue);
+  border: 1px solid var(--light-blue);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+.step-btn:hover,
+.step-btn:focus,
+.step-btn.active {
+  background: var(--light-blue);
+  color: var(--purplish-blue);
+}
+
+/* main content */
+.main-content {
+  background: var(--white);
+  max-width: 80%;
+  margin: 0 auto;
+  padding: 2.4rem 2rem;
+  border-radius: 1rem;
+  transform: translateY(-12%);
+}
+.primary-heading {
+  font-size: 3rem;
+  letter-spacing: 2px;
+}
+.content-description {
+  padding: 2rem 0;
+  font-size: 1.8rem;
+  line-height: 1.6;
+  color: var(--cool-gray);
+  opacity: 0.4;
+  max-width: 80%;
+}
+/* the form */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+input {
+  padding: 2rem 1.5rem;
+  outline: none;
+  border: 1px solid var(--light-gray);
+  border-radius: 6px;
+  margin-bottom: 2rem;
+}
+::placeholder {
+  font-size: 1.6rem;
+  color: var(--cool-gray);
+  opacity: 0.4;
+}
+/* next btn */
+.btn-container {
+  background: var(--white);
+  padding: 2rem;
+}
+.btn {
+  border: none;
+  padding: 1.3rem 1.7rem;
+  background: var(--marine-blue);
+  color: var(--white);
+}
+/* attribution */
+/* footer {
+  position: fixed;
+   transform: rotate(90deg);
+  bottom: 0;
+  left: 0;
+} */
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
