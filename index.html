@@ -37,7 +37,7 @@
         <!-- step 2 -->
          <div class="step-container">
           <div class="btn-box">
-            <button class="step-btn" id="step-2"><a href="#">2</a></button>
+            <button class="step-btn" id="step-2"><a href="#select-plan">2</a></button>
           </div>
 
           <div class="step-content">
@@ -49,7 +49,7 @@
         <!-- step 3 -->
          <div class="step-container">
           <div class="btn-box">
-            <button class="step-btn" id="step-3"><a href="#">3</a></button>
+            <button class="step-btn" id="step-3"><a href="#add-ons">3</a></button>
           </div>
 
           <div class="step-content">
@@ -61,7 +61,7 @@
         <!-- step 4 -->
          <div class="step-container">
           <div class="btn-box">
-            <button class="step-btn" id="step-4"><a href="#">4</a></button>
+            <button class="step-btn" id="step-4"><a href="#summary">4</a></button>
           </div>
 
           <div class="step-content">
@@ -75,7 +75,7 @@
       <!-- THE FORM CONTAINER WILL HAVE DIFFERENT CONTAINERS VISIBLE AT DIFFERENT TIMES -->
 
        <!-- Step 1 start -->
-      <article class="main-content" id="personal-info">
+      <article class="main-content hide" id="personal-info">
         <h2 class="primary-heading">Personal info</h2>
         <p class="content-description">Please provide your name, email address, and phone number.</p>
         <form action="#" id="form" class="form" novalidate>
@@ -83,16 +83,22 @@
           <input type="text" id="username" name="name" placeholder="e.g. Stephen King" required>
           <!-- email -->
            <label for="email">Email Address</label>
-           <input type="email" name="email" id="email" required placeholder=" e.g. stephenking@lorem.com">
+           <input type="email" name="email" id="email" required placeholder="e.g. stephenking@lorem.com">
            <!-- phone number -->
             <label for="tel-number"> Phone Number</label>
-            <input type="tel" name="tel-number" id="tel-number" placeholder=" e.g. +1 234 567 890" required>
+            <input type="tel" name="tel-number" id="tel-number" placeholder="e.g. +1 234 567 890" required>
         </form>
+
+        <!-- button -->
+         <aside class="back-next-btn-container">
+        <!-- <button class="btn btn--next" id="info-btn"><a href="#select-plan">Next Step</a></button> -->
+        <button class="btn btn--next" id="info-btn">Next Step</button>
+      </aside>
       </article>
       
-      <aside class="btn-container">
-        <button class="btn btn--next"><a href="#">Next Step</a></button>
-      </aside>
+      <!-- <aside class="btn-container">
+        <button class="btn btn--next" id="go-step-2"><a href="#select-plan">Next Step</a></button>
+      </aside> -->
         <!-- Step 1 end -->
 
       <!-- step 2 start -->
@@ -106,10 +112,10 @@
             <div>
               <h3 class="plan-title">Arcade</h3>
               <!-- monthly -->
-              <p class="monthly-price"> $9/mo</p>
+              <p class="plan-price monthly-price"> $9/mo</p>
               <!-- yearly -->
-               <p class="yearly-price">$90/yr</p>
-               <p class="yearly-duration">2 months free</p>
+               <p class="plan-price yearly-price hide">$90/yr</p>
+               <p class="yearly-duration hide">2 months free</p>
             </div>
             <!-- div containing price end -->
           </div>
@@ -119,10 +125,10 @@
           <div>
             <h3 class="plan-title">Advanced</h3>
             <!-- monthly -->
-            <p class="monthly-price">$12/mo</p>
+            <p class="plan-price monthly-price">$12/mo</p>
             <!-- yearly -->
-               <p class="yearly-price">$120/yr</p>
-               <p class="yearly-duration">2 months free</p>
+               <p class="plan-price yearly-price hide">$120/yr</p>
+               <p class="yearly-duration hide">2 months free</p>
           </div>
           <!-- end for price div -->
         </div>
@@ -132,36 +138,47 @@
           <img src="./assets/images/icon-pro.svg" alt="game icon">
            <div>
             <h3 class="plan-title">Pro</h3>
-            <p class="monthly-price">$15/mo</p>
+            <p class="plan-price monthly-price">$15/mo</p>
             <!-- yearly -->
-               <p class="yearly-price">$150/yr</p>
-               <p class="yearly-duration">2 months free</p>
+               <p class="plan-price yearly-price hide">$150/yr</p>
+               <p class="yearly-duration hide">2 months free</p>
           </div>
           <!-- price div end -->
         </div>
           <!-- box 3 ends -->
         </div>
         <!-- monthly/yearly -->
-         <input type="radio" name="" id="">
+        
+         <div class="toggle-btn">
+          <p>Monthly</p>
+          <div class="plan-toggle-container">
+             <input type="checkbox" id="toggle-input" class="plan-checkbox">
+             <label for="toggle-input" class="toggle-label"></label>
+          </div>
+         <p>Yearly</p>
+          <!-- <label for="yearly">Yearly</label> -->
+         </div>
           <!-- Monthly
   Yearly -->
+
+        <aside class="back-next-btn-container">
+          <button class="btn btn--back" id="step-bck-btn"> Go Back </button>
+          <button class="btn btn--next" id="step-fwd-btn"> Next Step </button>
+        </aside>
       </article>
-      <aside class="btn-box hide">
-        <button class="btn btn--back"><a href="#"> Go Back</a></button>
-        <button class="btn btn--next"><a href="#"> Next Step</a></button>
-      </aside>
+      
        <!-- Step 2 end -->
       <!-- step 3 start -->
-      <article class="main-content hide">
+      <article class="main-content" id="addon-box">
         <h2 class="primary-heading">  Pick add-ons</h2>
         <p class="content-description">Add-ons help enhance your gaming experience.</p>
 
         <!-- section -->
-         <section class="add-on-choice hide">
+         <section class="add-on-choice">
           <!-- online service -->
             <div class="add-on">
               <!-- checkbox -->
-              <div add-on-check>
+              <div class="add-on-check">
                 <input type="checkbox" name="checkbox" id="add-service">
               </div>
               <!-- text -->
@@ -217,7 +234,7 @@
             </div>
          </section>
       </article>
-      <!-- <aside class="btn-box">
+      <!-- <aside class="back-next-btn-container">
         <button class="btn btn--back"><a href="#">Go Back</a></button>
         <button class="btn btn--next"><a href="#">Next Step</a></button>
       </aside> -->
@@ -238,12 +255,6 @@
           </div>
          </section>
       </article>
-
-      <!-- <aside class="btn-box hide">
-        <button class="btn btn--back"><a href="#">Go Back</a></button>
-        <button class="btn btn--next"><a href="#">Confirm</a></button>
-      </aside> -->
-      <!-- steps end -->
     </section>
   </main>
 
