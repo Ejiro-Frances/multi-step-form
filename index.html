@@ -75,7 +75,7 @@
       <!-- THE FORM CONTAINER WILL HAVE DIFFERENT CONTAINERS VISIBLE AT DIFFERENT TIMES -->
 
        <!-- Step 1 start -->
-      <article class="main-content hide" id="personal-info">
+      <article class="main-content" id="personal-info">
         <h2 class="primary-heading">Personal info</h2>
         <p class="content-description">Please provide your name, email address, and phone number.</p>
         <form action="#" id="form" class="form" novalidate>
@@ -113,6 +113,7 @@
               <h3 class="plan-title">Arcade</h3>
               <!-- monthly -->
               <p class="plan-price monthly-price"> $9/mo</p>
+              <p class="empty-p">&nbsp;</p>
               <!-- yearly -->
                <p class="plan-price yearly-price hide">$90/yr</p>
                <p class="yearly-duration hide">2 months free</p>
@@ -126,6 +127,7 @@
             <h3 class="plan-title">Advanced</h3>
             <!-- monthly -->
             <p class="plan-price monthly-price">$12/mo</p>
+             <p class="empty-p">&nbsp;</p>
             <!-- yearly -->
                <p class="plan-price yearly-price hide">$120/yr</p>
                <p class="yearly-duration hide">2 months free</p>
@@ -139,6 +141,7 @@
            <div>
             <h3 class="plan-title">Pro</h3>
             <p class="plan-price monthly-price">$15/mo</p>
+             <p class="empty-p">&nbsp;</p>
             <!-- yearly -->
                <p class="plan-price yearly-price hide">$150/yr</p>
                <p class="yearly-duration hide">2 months free</p>
@@ -169,7 +172,7 @@
       
        <!-- Step 2 end -->
       <!-- step 3 start -->
-      <article class="main-content" id="addon-box">
+      <article class="main-content hide" id="addon-box">
         <h2 class="primary-heading">  Pick add-ons</h2>
         <p class="content-description">Add-ons help enhance your gaming experience.</p>
 
@@ -178,9 +181,10 @@
           <!-- online service -->
             <div class="add-on">
               <!-- checkbox -->
-              <div class="add-on-check">
-                <input type="checkbox" name="checkbox" id="add-service">
-              </div>
+              <!-- <div class="add-on-check">
+               
+              </div> -->
+               <input type="checkbox" name="add-serv-checkbox" id="add-service" class="add-checkbox">
               <!-- text -->
               <div class="add-on-text">
                 <h3 class="add-on-title"> Online service</h3>
@@ -191,16 +195,15 @@
                 <!-- monthly -->
                 <p class="monthly-bonus">+$1/mo</p>
                 <!-- yearly -->
-                  <p class="yearly-bonus">+$10/yr</p>
+                  <p class="yearly-bonus hide">+$10/yr</p>
               </div>
  
             </div>
             <!-- larger storage -->
               <div class="add-on">
               <!-- checkbox -->
-              <div add-on-check>
-                <input type="checkbox" name="checkbox" id="add-service">
-              </div>
+                <input type="checkbox" name="large-storage-checkbox" id="large-storage" class="add-checkbox">
+              
               <!-- text -->
               <div class="add-on-text">
                 <h3 class="add-on-title"> Larger storage</h3>
@@ -210,15 +213,13 @@
               <div class="add-on-bonus">
                 <p class="monthly-bonus">+$2/mo</p>
                 <!-- yearly bonus -->
-                 <p class="yearly-bonus">+$20/yr</p>
+                 <p class="yearly-bonus hide">+$20/yr</p>
               </div>
             </div>
             <!-- customizable profile -->
               <div class="add-on">
               <!-- checkbox -->
-              <div add-on-check>
-                <input type="checkbox" name="checkbox" id="add-service">
-              </div>
+                <input type="checkbox" name="pick-checkbox" id="custom-profile" class="add-checkbox">
               <!-- text -->
               <div class="add-on-text">
                 <h3 class="add-on-title"> Customizable Profile</h3>
@@ -229,36 +230,58 @@
                <!-- monthly -->
                   <p class="monthly-bonus">+$2/mo</p>
                <!-- yearly -->
-                 <p class="yearly-bonus">+$20/mo</p>
+                 <p class="yearly-bonus hide">+$20/mo</p>
               </div>
             </div>
          </section>
+
+        <aside class="back-next-btn-container">
+          <button class="btn btn--back" id="back-add-on"><a href="#">Go Back</a></button>
+          <button class="btn btn--next" id="fwd-add-on"><a href="#">Next Step</a></button>
+        </aside>
       </article>
-      <!-- <aside class="back-next-btn-container">
-        <button class="btn btn--back"><a href="#">Go Back</a></button>
-        <button class="btn btn--next"><a href="#">Next Step</a></button>
-      </aside> -->
+     
       <!-- step 3 ends -->
       <!-- step 4 start -->
-      <article class="main-content hide">
+      <article class="main-content hide" id="finishing-up">
         <h2 class="primary-heading">Finishing up</h2>
         <p class="content-description">Double-check everything looks OK before confirming.</p>
         <!-- section to contain finishing details -->
-         <section class="">
-          <!-- monthly -->
-          <div class="">
-            <h4>Arcade(Monthly)</h4>
-            <p><a href="#">change</a></p>
-          </div>
+         <section class="dynamic-container">
+          <!-- select plan -->
           <div>
-            <p></p>
+            <div class="">
+            <h4 class="selected-plan"></h4>
+            <span class="selected-plan-mon-yr"></span>
+            <p><a href="#">change</a></p>
+            </div>
+
+            <p class="selected-plan-price"></p>
+          </div>
+
+          <!-- pick add-ons selection -->
+          <div>
+            <h4 class="selected-add-on-1"></h4>
+            <p class="selected-plan-price-1"></p>
+          </div>
+          <!-- add on 2 -->
+           <div>
+            <h4 class="selected-add-on-2"></h4>
+            <p class="selected-plan-price-2"></p>
+          </div>
+          <!-- add on 3 -->
+            <div>
+            <h4 class="selected-add-on-3"></h4>
+            <p class="selected-plan-price-3"></p>
           </div>
          </section>
+          <aside class="back-next-btn-container">
+          <button class="btn btn--back" id="back-add-on">Go Back</button>
+          <button class="btn btn--next confirm-btn" id="fwd-add-on">Confirm</button>
+        </aside>
       </article>
-    </section>
-  </main>
 
-  <!-- Step 4 start -->
+      <!-- Step 4 start -->
 
   <!-- Dynamically add subscription and add-on selections here -->
 
@@ -275,6 +298,10 @@
   to email us at support@loremgaming.com. -->
 
   <!-- Step 5 end -->
+    </section>
+
+    
+  </main>
   
   <footer class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 

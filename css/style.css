@@ -181,7 +181,9 @@ input {
   background: var(--white);
   color: var(--cool-gray);
 }
-
+.confirm-btn {
+  background: var(--purplish-blue);
+}
 /* styles for page 2 */
 .plan-container {
   display: flex;
@@ -207,7 +209,8 @@ input {
   color: var(--cool-gray);
   margin: 0.2rem 0;
 }
-.yearly-duration {
+.yearly-duration,
+.empty-p {
   font-size: 1.3rem;
 }
 /* the toggle button div*/
@@ -269,6 +272,42 @@ input {
 }
 .plan-checkbox:checked + .toggle-label:before {
   transform: translateX(20px);
+}
+/* The section for add on */
+.add-on {
+  display: grid;
+  grid-template-columns: 2rem 1fr 5rem;
+  align-items: center;
+  gap: 1.6rem;
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  border: 1px solid var(--light-gray);
+  border-radius: 0.5rem;
+}
+.add-on:hover,
+.add-on:focus,
+.add-on.active {
+  border: 1px solid var(--purplish-blue);
+  background: var(--magnolia);
+}
+.add-checkbox {
+  width: 15px;
+  height: 20px;
+  transform: translateY(35%);
+  accent-color: var(--purplish-blue);
+}
+
+.add-on-title {
+  font-size: 1.4rem;
+  margin-bottom: 5px;
+}
+.add-on-p {
+  font-size: 1.3rem;
+  color: var(--cool-gray);
+}
+.add-on-bonus {
+  font-size: 1.3rem;
+  color: var(--purplish-blue);
 }
 /* attribution */
 /* footer {
