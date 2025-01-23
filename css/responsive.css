@@ -1,8 +1,9 @@
-@media (min-width: 85rem) {
+@media (min-width: 53rem) {
   /* 85rem */
   .main-container {
     display: grid;
     grid-template-columns: 25rem 1fr;
+    grid-template-rows: auto;
     min-height: 60vh;
     gap: 1rem;
 
@@ -13,21 +14,25 @@
 
   .side-bar {
     all: unset;
-    grid-row: 1;
-  }
-  .side-container-holder {
-    transform: unset;
-    flex-direction: column;
+
+    grid-row: 1/3;
+    background-image: url("../assets/images/bg-sidebar-desktop.svg");
+    background-size: cover;
+    background-repeat: no-repeat;
     padding: 5rem 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
   }
+
   .step-container {
     display: flex;
     align-items: center;
-    gap: 1rem;
+    gap: 1.4rem;
   }
   .step-btn {
-    width: 30px;
-    height: 30px;
+    width: 3rem;
+    height: 3rem;
   }
   .step-content {
     display: block;
@@ -42,12 +47,16 @@
     font-size: 1.6rem;
     font-weight: 500;
   }
-  /* .btn-container {
-  } */
+
   .main-content {
     transform: unset;
     border-radius: unset;
-    padding: 0 2rem;
+    padding: 4rem 2rem;
     max-width: 100%;
+    min-height: 70rem;
+  }
+  .btn-container {
+    grid-column: 2;
+    grid-row: 2;
   }
 }

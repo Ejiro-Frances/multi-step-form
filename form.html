@@ -3,6 +3,74 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | Multi-step form</title>
+    <link rel="stylesheet" href="./css/form.css" />
+  </head>
+  <body>
+    <main class="main">
+      <section class="container">
+        <!-- Nav Buttons div -->
+        <div class="nav-buttons">
+          <button>1</button>
+          <button>2</button>
+          <button>3</button>
+          <button>4</button>
+        </div>
+        <!-- Form Pages div -->
+        <div class="form-pages">
+          <!-- page one -->
+          <div class="form-page active">
+            <label for="name">Name</label>
+            <input id="name" type=" text" placeholder="name" />
+          </div>
+
+          <!-- page two -->
+          <div class="form-page">
+            <label for="tel">Number</label>
+            <input id="tel" type=" tel" placeholder="123456789" />
+          </div>
+          <!-- page three -->
+          <div class="form-page">
+            <label for="email">Email</label>
+            <input id="email" type=" email" placeholder="@doe.com" />
+          </div>
+          <!-- page four -->
+          <div class="form-page">
+            <label for="select">select</label>
+            <select name="" id="select">
+              <option value="gender">Gender</option>
+              <option value="m">male</option>
+              <option value="f">female</option>
+            </select>
+          </div>
+        </div>
+        <!-- form buttons div -->
+        <div class="page-buttons">
+          <button id="prevBtn">Back</button>
+          <button id="nextBtn">Next</button>
+        </div>
+      </section>
+    </main>
+
+    <script src="./js/form.js"></script>
+  </body>
+</html>
+
+<!-- ///////////////////////////////////////////// -->
+<!-- ///////////////////////////////////////////// -->
+<!-- ///////////////////////////////////////////// -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <link
       rel="icon"
@@ -18,59 +86,80 @@
   <body>
     <main>
       <section class="main-container">
-        <aside class="side-bar">
+        <article class="side-bar">
           <!-- step 1 -->
-          <div class="step-container">
-            <div class="btn-box">
-              <button class="step-btn">1</button>
+          <picture class="picture">
+            <source
+              srcset="./assets/images/bg-sidebar-desktop.svg"
+              media="(min-width:850px)"
+            />
+            <img
+              src="./assets/images/bg-sidebar-mobile.svg"
+              alt="background image"
+            />
+          </picture>
+
+          <div class="side-container-holder">
+            <div class="step-container">
+              <div class="btn-box">
+                <button class="step-btn" id="step-1">
+                  <a href="#personal-info">1</a>
+                </button>
+              </div>
+
+              <div class="step-content">
+                <p class="step-p">STEP 1</p>
+                <h2 class="step-description">YOUR INFO</h2>
+              </div>
             </div>
 
-            <div class="step-content">
-              <p class="step-p">STEP 1</p>
-              <h2 class="step-description">YOUR INFO</h2>
+            <!-- step 2 -->
+            <div class="step-container">
+              <div class="btn-box">
+                <button class="step-btn" id="step-2">
+                  <a href="#select-plan">2</a>
+                </button>
+              </div>
+
+              <div class="step-content">
+                <p class="step-p">STEP 2</p>
+                <h2 class="step-description">SELECT PLAN</h2>
+              </div>
+            </div>
+
+            <!-- step 3 -->
+            <div class="step-container">
+              <div class="btn-box">
+                <button class="step-btn" id="step-3">
+                  <a href="#add-ons">3</a>
+                </button>
+              </div>
+
+              <div class="step-content">
+                <p class="step-p">STEP 3</p>
+                <h2 class="step-description">ADD-ONS</h2>
+              </div>
+            </div>
+
+            <!-- step 4 -->
+            <div class="step-container">
+              <div class="btn-box">
+                <button class="step-btn" id="step-4">
+                  <a href="#summary">4</a>
+                </button>
+              </div>
+
+              <div class="step-content">
+                <p class="step-p">STEP 4</p>
+                <h2 class="step-description">SUMMARY</h2>
+              </div>
             </div>
           </div>
-
-          <!-- step 2 -->
-          <div class="step-container">
-            <div class="btn-box">
-              <button class="step-btn">2</button>
-            </div>
-
-            <div class="step-content">
-              <p class="step-p">STEP 2</p>
-              <h2 class="step-description">SELECT PLAN</h2>
-            </div>
-          </div>
-
-          <!-- step 3 -->
-          <div class="step-container">
-            <div class="btn-box">
-              <button class="step-btn">3</button>
-            </div>
-
-            <div class="step-content">
-              <p class="step-p">STEP 3</p>
-              <h2 class="step-description">ADD-ONS</h2>
-            </div>
-          </div>
-
-          <!-- step 4 -->
-          <div class="step-container">
-            <div class="btn-box">
-              <button class="step-btn">4</button>
-            </div>
-
-            <div class="step-content">
-              <p class="step-p">STEP 4</p>
-              <h2 class="step-description">SUMMARY</h2>
-            </div>
-          </div>
-        </aside>
+        </article>
         <!-- THE FORM CONTAINER WILL HAVE DIFFERENT CONTAINERS VISIBLE AT DIFFERENT TIMES -->
 
         <!-- Step 1 start -->
-        <article class="main-content active" id="personal-info">
+        <article class="main-content" id="personal-info">
           <h2 class="primary-heading">Personal info</h2>
           <p class="content-description">
             Please provide your name, email address, and phone number.
@@ -105,16 +194,19 @@
           </form>
 
           <!-- button -->
-          <!-- <aside class="back-next-btn-container"> -->
-          <!-- <button class="btn btn--next" id="info-btn"><a href="#select-plan">Next Step</a></button> -->
-          <!-- <button class="btn btn--next" id="info-btn">Next Step</button> -->
-          <!-- </aside> -->
+          <aside class="back-next-btn-container">
+            <!-- <button class="btn btn--next" id="info-btn"><a href="#select-plan">Next Step</a></button> -->
+            <button class="btn btn--next" id="info-btn">Next Step</button>
+          </aside>
         </article>
 
+        <!-- <aside class="btn-container">
+        <button class="btn btn--next" id="go-step-2"><a href="#select-plan">Next Step</a></button>
+      </aside> -->
         <!-- Step 1 end -->
 
         <!-- step 2 start -->
-        <article class="main-content" id="select-plan">
+        <article class="main-content hide" id="select-plan">
           <h2 class="primary-heading">Select your plan</h2>
           <p class="content-description">
             You have the option of monthly or yearly billing.
@@ -175,17 +267,18 @@
             <p>Yearly</p>
             <!-- <label for="yearly">Yearly</label> -->
           </div>
-          <!-- Monthly Yearly -->
+          <!-- Monthly
+  Yearly -->
 
-          <!-- <aside class="back-next-btn-container">
+          <aside class="back-next-btn-container">
             <button class="btn btn--back" id="step-bck-btn">Go Back</button>
             <button class="btn btn--next" id="step-fwd-btn">Next Step</button>
-          </aside> -->
+          </aside>
         </article>
 
         <!-- Step 2 end -->
         <!-- step 3 start -->
-        <article class="main-content" id="addon-box">
+        <article class="main-content hide" id="addon-box">
           <h2 class="primary-heading">Pick add-ons</h2>
           <p class="content-description">
             Add-ons help enhance your gaming experience.
@@ -264,19 +357,19 @@
             </div>
           </section>
 
-          <!-- <aside class="back-next-btn-container">
+          <aside class="back-next-btn-container">
             <button class="btn btn--back" id="back-add-on">
               <a href="#">Go Back</a>
             </button>
             <button class="btn btn--next" id="fwd-add-on">
               <a href="#">Next Step</a>
             </button>
-          </aside> -->
+          </aside>
         </article>
 
         <!-- step 3 ends -->
         <!-- step 4 start -->
-        <article class="main-content" id="finishing-up">
+        <article class="main-content hide" id="finishing-up">
           <h2 class="primary-heading">Finishing up</h2>
           <p class="content-description">
             Double-check everything looks OK before confirming.
@@ -310,12 +403,12 @@
               <p class="selected-plan-price-3"></p>
             </div>
           </section>
-          <!-- <aside class="back-next-btn-container">
+          <aside class="back-next-btn-container">
             <button class="btn btn--back" id="back-add-on">Go Back</button>
             <button class="btn btn--next confirm-btn" id="fwd-add-on">
               Confirm
             </button>
-          </aside> -->
+          </aside>
         </article>
 
         <!-- Step 4 start -->
@@ -335,10 +428,6 @@
   to email us at support@loremgaming.com. -->
 
         <!-- Step 5 end -->
-        <div aria-label="button holder" class="btn-container">
-          <button class="btn btn--back" id="back-btn">Go Back</button>
-          <button class="btn btn--next" id="next-btn">Next Step</button>
-        </div>
       </section>
     </main>
 
