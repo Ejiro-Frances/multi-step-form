@@ -56,8 +56,17 @@
     max-width: 100%;
     min-height: 60rem;
   }
-  .btn-container {
+  /* .btn-container {
     grid-column: 2;
     grid-row: 2;
+  } */
+  .plan-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .plan-box {
+    flex-direction: column;
+  }
+  .plan-icon {
+    margin-bottom: 4.5rem;
   }
 }

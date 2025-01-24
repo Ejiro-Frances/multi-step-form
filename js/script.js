@@ -26,12 +26,19 @@ const updateButtonState = function () {
   if (currentPage === 0) {
     backBtn.style.opacity = "0";
     nextBtn.textContent = "Next Step";
-  } else if (currentPage === pages.length - 1) {
+  } else if (currentPage === pages.length - 2) {
     backBtn.style.opacity = "1";
+    nextBtn.style.opacity = "1";
     nextBtn.textContent = "Confirm";
+    nextBtn.style.backgroundColor = "hsl(243, 100%, 62%)";
+  } else if (currentPage === pages.length - 1) {
+    backBtn.style.opacity = "0";
+    nextBtn.style.opacity = "0";
   } else {
     backBtn.style.opacity = "1";
+    nextBtn.style.opacity = "1";
     nextBtn.textContent = "Next Step";
+    nextBtn.style.backgroundColor = "hsl(213, 96%, 18%)";
   }
 };
 
@@ -48,9 +55,11 @@ const showPage = (index) => {
 
 stepBtns.forEach((button, index) => {
   button.addEventListener("click", () => {
-    button.classList.toggle("active");
+    button.classList.add("active");
     currentPage = index;
+
     showPage(currentPage);
+    button.classList.remove("active");
   });
 });
 
@@ -106,6 +115,7 @@ toggleButton.addEventListener("click", () => {
       mp.classList.remove("hide");
     }
   });
+
   // Handle the Empty Paragraph/Div
   emptyPrice.forEach((emptyP) => {
     if (toggleButton.checked) {
@@ -201,89 +211,6 @@ const selectedAddPrice1 = document.querySelector(".selected-add-price");
 const selectedAddPrice2 = document.querySelector(".selected-add-price-2");
 const totalDuration = document.querySelector(".total-duration");
 const totalPrice = document.querySelector(".total-price");
-
-// const planTitles = document.querySelectorAll(".plan-title");
-// function to update the summary based on selected plan
-// const updatePlanSummary = function () {
-//   // check if yearly/monthly is selected
-//   const isYearly = toggleButton.checked;
-
-//   // Get the selected plan
-//   // const activePlan = document.querySelector(".plan.active");
-//   const activePlan = document.querySelector(".plan-box.active");
-
-//   const planName = activePlan.querySelector(".plan-title").textContent;
-//   const planPrice = activePlan
-//     ? parseFloat(activePlan.querySelector(".plan-price.yearly").textContent)
-//     : parseFloat(activePlan.querySelector(".plan-price.monthly").textContent);
-
-//   // update the summary
-//   selectedPlan.textContent = planName;
-//   selectedPlanDuration.textContent = isYearly ? "/yr" : "/mo";
-//   selectedPlanPrice.textContent = `$${planPrice}`;
-//   // update total duration
-//   totalDuration.textContent = isYearly ? "Yearly" : "Monthly";
-
-//   return planPrice;
-// };
-
-// // Function to update the summary based on selected add-ons
-// const updateAddOnSummary = () => {
-//   const selectedAddOns = [];
-//   const selectedAddPrices = [];
-//   let totalAddOnPrice = 0;
-
-//   // Check which add-ons are active
-//   addonElements.forEach((addOnEl) => {
-//     const childCheckbox = addOnEl.querySelector(".add-checkbox");
-//     if (childCheckbox.checked) {
-//       const addOnName = addOnEl.querySelector(".add-on-name").textContent;
-//       const addOnPrice = parseFloat(
-//         addOnEl.querySelector(
-//           `.add-on-price.${toggleButton.checked ? "yearly" : "monthly"}`
-//         ).textContent
-//       );
-//       // get add on price
-//       selectedAddOns.push(addOnName);
-//       selectedAddPrices.push(addOnPrice);
-//       totalAddOnPrice += addOnPrice;
-//     }
-//   });
-
-//   // Update the summary with add-ons
-//   selectedAddon1.textContent = selectedAddOns[0] || ""; // First add-on
-//   selectedAddPrice1.textContent = selectedAddPrices[0]
-//     ? `$${selectedAddPrices[0]}`
-//     : ""; // Price for the first add-on
-//   selectedAddon2.textContent = selectedAddOns[1] || ""; // Second add-on (optional)
-//   selectedAddPrice2.textContent = selectedAddPrices[1]
-//     ? `$${selectedAddPrices[1]}`
-//     : ""; // Price for the second add-on (optional)
-
-//   return totalAddOnPrice; // Return the total add-on price for total calculation
-// };
-
-// // Function to calculate and update the total price
-// const updateTotalPrice = () => {
-//   const planPrice = updatePlanSummary(); // Get the plan price
-//   const addOnPrice = updateAddOnSummary(); // Get the total add-on price
-//   const total = planPrice + addOnPrice;
-
-//   // Update the total price
-//   totalPrice.textContent = `$${total}`;
-// };
-
-// // Event listener for the plan checkbox (monthly/yearly toggle)
-// toggleButton.addEventListener("change", updateTotalPrice);
-
-// // Event listener for add-ons
-// addonElements.forEach((addOnEl) => {
-//   const childCheckbox = addOnEl.querySelector(".add-checkbox");
-//   childCheckbox.addEventListener("change", updateTotalPrice);
-// });
-
-// // Call the update function initially to set the summary
-// updateTotalPrice();
 
 // Function to update the summary page
 const updateSummary = () => {

@@ -108,7 +108,7 @@
         <!-- Step 1 end -->
 
         <!-- step 2 start -->
-        <article class="main-content" id="select-plan">
+        <article class="main-content select-plan" id="select-plan">
           <h2 class="primary-heading">Select your plan</h2>
           <p class="content-description">
             You have the option of monthly or yearly billing.
@@ -116,7 +116,11 @@
           <div class="plan-container">
             <!-- box 1 -->
             <div class="plan-box">
-              <img src="./assets/images/icon-arcade.svg" alt="Arcade icon" />
+              <img
+                class="plan-icon"
+                src="./assets/images/icon-arcade.svg"
+                alt="Arcade icon"
+              />
               <div>
                 <h3 class="plan-title">Arcade</h3>
                 <!-- monthly -->
@@ -130,7 +134,11 @@
             </div>
             <!-- box 1 end -->
             <div class="plan-box">
-              <img src="./assets/images/icon-advanced.svg" alt="icon" />
+              <img
+                class="plan-icon"
+                src="./assets/images/icon-advanced.svg"
+                alt="icon"
+              />
               <div>
                 <h3 class="plan-title">Advanced</h3>
                 <!-- monthly -->
@@ -145,7 +153,11 @@
             <!-- box 2 end -->
 
             <div class="plan-box">
-              <img src="./assets/images/icon-pro.svg" alt="game icon" />
+              <img
+                class="plan-icon"
+                src="./assets/images/icon-pro.svg"
+                alt="game icon"
+              />
               <div>
                 <h3 class="plan-title">Pro</h3>
                 <p class="plan-price monthly-price">$15/mo</p>
@@ -161,15 +173,13 @@
           <!-- monthly/yearly -->
 
           <div class="toggle-btn">
-            <p>Monthly</p>
+            <p class="toggle-m">Monthly</p>
             <div class="plan-toggle-container">
               <input type="checkbox" id="toggle-input" class="plan-checkbox" />
               <label for="toggle-input" class="toggle-label"></label>
             </div>
-            <p>Yearly</p>
-            <!-- <label for="yearly">Yearly</label> -->
+            <p class="toggle-y">Yearly</p>
           </div>
-          <!-- Monthly Yearly -->
         </article>
 
         <!-- Step 2 end -->
@@ -280,21 +290,13 @@
             <div class="line"></div>
             <!-- pick add-ons selection -->
             <div class="dynamic-div dynamic-add-on">
-              <p class="selected-add-on-1">
-                <!-- Online service -->
-              </p>
-              <p class="selected-add-price">
-                <!-- +$1/mo -->
-              </p>
+              <p class="selected-add-on-1"></p>
+              <p class="selected-add-price"></p>
             </div>
             <!-- add on 2 -->
             <div class="dynamic-div dynamic-add-on">
-              <p class="selected-add-on-2">
-                <!-- Larger storage -->
-              </p>
-              <p class="selected-add-price-2">
-                <!-- +$2/mo -->
-              </p>
+              <p class="selected-add-on-2"></p>
+              <p class="selected-add-price-2"></p>
             </div>
             <!-- add on 3 -->
             <div>
@@ -306,31 +308,45 @@
           <div class="total-container">
             <p>
               Total
-              <span class="total-duration">
-                <!-- (per/month) -->
-              </span>
+              <span class="total-duration"></span>
             </p>
-            <h5 class="total-price">
-              <!-- +$12/mo -->
-            </h5>
+            <h5 class="total-price"></h5>
           </div>
         </article>
-
-        <!-- Step 4 start -->
-
-        <!-- Dynamically add subscription and add-on selections here -->
-
-        <!-- Total (per month/year) -->
 
         <!-- Step 4 end -->
 
         <!-- Step 5 start -->
-
-        <!-- Thank you!
-
-  Thanks for confirming your subscription! We hope you have fun 
-  using our platform. If you ever need support, please feel free 
-  to email us at support@loremgaming.com. -->
+        <article class="main-content">
+          <div class="confirmation">
+            <div class="thank-you-img">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="80"
+                height="80"
+                viewBox="0 0 80 80"
+              >
+                <g fill="none">
+                  <circle cx="40" cy="40" r="40" fill="#F9818E" />
+                  <path
+                    fill="#E96170"
+                    d="M48.464 79.167c.768-.15 1.53-.321 2.288-.515a40.04 40.04 0 0 0 3.794-1.266 40.043 40.043 0 0 0 3.657-1.63 40.046 40.046 0 0 0 12.463-9.898A40.063 40.063 0 0 0 78.3 51.89c.338-1.117.627-2.249.867-3.391L55.374 24.698a21.6 21.6 0 0 0-15.332-6.365 21.629 21.629 0 0 0-15.344 6.365c-8.486 8.489-8.486 22.205 0 30.694l23.766 23.775Z"
+                  />
+                  <path
+                    fill="#FFF"
+                    d="M40.003 18.333a21.58 21.58 0 0 1 15.31 6.351c8.471 8.471 8.471 22.158 0 30.63-8.47 8.47-22.156 8.47-30.627 0-8.47-8.472-8.47-22.159 0-30.63a21.594 21.594 0 0 1 15.317-6.35Zm9.865 15c-.316.028-.622.15-.872.344l-12.168 9.13-5.641-5.642c-1.224-1.275-3.63 1.132-2.356 2.356l6.663 6.663c.56.56 1.539.63 2.173.156l13.326-9.995c1.122-.816.43-2.993-.956-3.013a1.666 1.666 0 0 0-.17 0Z"
+                  />
+                </g>
+              </svg>
+            </div>
+            <h3 class="primary-heading">Thank you!</h3>
+            <p class="content-description">
+              Thanks for confirming your subscription! We hope you have fun
+              using our platform. If you ever need support, please feel free to
+              email us at support@loremgaming.com.
+            </p>
+          </div>
+        </article>
 
         <!-- Step 5 end -->
         <div aria-label="button holder" class="btn-container">
