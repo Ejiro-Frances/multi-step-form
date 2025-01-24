@@ -52,8 +52,9 @@
     transform: unset;
     border-radius: unset;
     padding: 4rem 2rem;
+    width: 70rem;
     max-width: 100%;
-    min-height: 70rem;
+    min-height: 60rem;
   }
   .btn-container {
     grid-column: 2;

@@ -103,12 +103,6 @@
               required
             />
           </form>
-
-          <!-- button -->
-          <!-- <aside class="back-next-btn-container"> -->
-          <!-- <button class="btn btn--next" id="info-btn"><a href="#select-plan">Next Step</a></button> -->
-          <!-- <button class="btn btn--next" id="info-btn">Next Step</button> -->
-          <!-- </aside> -->
         </article>
 
         <!-- Step 1 end -->
@@ -176,11 +170,6 @@
             <!-- <label for="yearly">Yearly</label> -->
           </div>
           <!-- Monthly Yearly -->
-
-          <!-- <aside class="back-next-btn-container">
-            <button class="btn btn--back" id="step-bck-btn">Go Back</button>
-            <button class="btn btn--next" id="step-fwd-btn">Next Step</button>
-          </aside> -->
         </article>
 
         <!-- Step 2 end -->
@@ -196,9 +185,7 @@
             <!-- online service -->
             <div class="add-on">
               <!-- checkbox -->
-              <!-- <div class="add-on-check">
-               
-              </div> -->
+
               <input
                 type="checkbox"
                 name="add-serv-checkbox"
@@ -259,22 +246,13 @@
                 <!-- monthly -->
                 <p class="monthly-bonus">+$2/mo</p>
                 <!-- yearly -->
-                <p class="yearly-bonus hide">+$20/mo</p>
+                <p class="yearly-bonus hide">+$20/yr</p>
               </div>
             </div>
           </section>
-
-          <!-- <aside class="back-next-btn-container">
-            <button class="btn btn--back" id="back-add-on">
-              <a href="#">Go Back</a>
-            </button>
-            <button class="btn btn--next" id="fwd-add-on">
-              <a href="#">Next Step</a>
-            </button>
-          </aside> -->
         </article>
-
         <!-- step 3 ends -->
+
         <!-- step 4 start -->
         <article class="main-content" id="finishing-up">
           <h2 class="primary-heading">Finishing up</h2>
@@ -284,25 +262,39 @@
           <!-- section to contain finishing details -->
           <section class="dynamic-container">
             <!-- select plan -->
-            <div>
-              <div class="">
-                <h4 class="selected-plan"></h4>
-                <span class="selected-plan-mon-yr"></span>
-                <p><a href="#">change</a></p>
+            <div class="dynamic-div">
+              <div class="dynamic-plan-box">
+                <h4 class="selected-plan">
+                  <!-- Arcade -->
+                  <span class="selected-plan-mon-yr">
+                    <!-- (Monthly) -->
+                  </span>
+                </h4>
+                <p class="change-plan"><a href="#">change</a></p>
               </div>
 
-              <p class="selected-plan-price"></p>
+              <p class="selected-plan-price">
+                <!-- $9/mo -->
+              </p>
             </div>
-
+            <div class="line"></div>
             <!-- pick add-ons selection -->
-            <div>
-              <h4 class="selected-add-on-1"></h4>
-              <p class="selected-plan-price-1"></p>
+            <div class="dynamic-div dynamic-add-on">
+              <p class="selected-add-on-1">
+                <!-- Online service -->
+              </p>
+              <p class="selected-add-price">
+                <!-- +$1/mo -->
+              </p>
             </div>
             <!-- add on 2 -->
-            <div>
-              <h4 class="selected-add-on-2"></h4>
-              <p class="selected-plan-price-2"></p>
+            <div class="dynamic-div dynamic-add-on">
+              <p class="selected-add-on-2">
+                <!-- Larger storage -->
+              </p>
+              <p class="selected-add-price-2">
+                <!-- +$2/mo -->
+              </p>
             </div>
             <!-- add on 3 -->
             <div>
@@ -310,12 +302,18 @@
               <p class="selected-plan-price-3"></p>
             </div>
           </section>
-          <!-- <aside class="back-next-btn-container">
-            <button class="btn btn--back" id="back-add-on">Go Back</button>
-            <button class="btn btn--next confirm-btn" id="fwd-add-on">
-              Confirm
-            </button>
-          </aside> -->
+
+          <div class="total-container">
+            <p>
+              Total
+              <span class="total-duration">
+                <!-- (per/month) -->
+              </span>
+            </p>
+            <h5 class="total-price">
+              <!-- +$12/mo -->
+            </h5>
+          </div>
         </article>
 
         <!-- Step 4 start -->

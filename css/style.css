@@ -109,7 +109,7 @@ body {
 .main-content {
   display: none;
   background: var(--white);
-  width: 60rem;
+
   max-width: 80%;
 
   margin: 0 auto;
@@ -187,7 +187,9 @@ input {
   display: flex;
   gap: 1.5rem;
 }
-.plan-box:hover {
+.plan-box:hover,
+.plan-box:active,
+.plan-box.active {
   border: 1px solid var(--marine-blue);
   background: var(--magnolia);
 }
@@ -281,15 +283,15 @@ input {
   background: var(--magnolia);
 }
 .add-checkbox {
-  width: 15px;
-  height: 20px;
+  width: 1.5rem;
+  height: 2rem;
   transform: translateY(35%);
   accent-color: var(--purplish-blue);
 }
 
 .add-on-title {
   font-size: 1.4rem;
-  margin-bottom: 5px;
+  margin-bottom: 0.5rem;
 }
 .add-on-p {
   font-size: 1.3rem;
@@ -304,4 +306,47 @@ input {
   display: flex;
   justify-content: space-between;
   padding: 0 2rem;
+}
+
+/* The summary page */
+.dynamic-container {
+  background: var(--alabaster);
+  border-radius: 1rem;
+  max-width: 80%;
+  padding: 2rem;
+}
+.dynamic-div,
+.total-container {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1.4rem;
+}
+.selected-plan {
+  margin-bottom: 0.5rem;
+}
+.change-plan a {
+  text-decoration: underline;
+}
+.dynamic-div .selected-plan-price {
+  font-weight: 700;
+  color: var(--marine-blue);
+}
+.dynamic-div p,
+.total-container p {
+  color: var(--cool-gray);
+}
+.line {
+  content: "";
+  background-color: var(--light-gray);
+  height: 1px;
+  max-width: 96%;
+  margin: 2.8rem auto;
+}
+.total-container {
+  max-width: 80%;
+  padding: 3rem;
+}
+.total-price {
+  color: var(--purplish-blue);
+  font-weight: 700;
 }
