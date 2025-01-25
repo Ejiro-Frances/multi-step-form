@@ -76,7 +76,12 @@
             Please provide your name, email address, and phone number.
           </p>
           <form action="#" id="form" class="form" novalidate>
-            <label for="username">Name</label>
+            <div class="error-container">
+              <label for="username">Name</label>
+              <span class="error-message username-error hide">
+                This field is required
+              </span>
+            </div>
             <input
               type="text"
               id="username"
@@ -85,7 +90,10 @@
               required
             />
             <!-- email -->
-            <label for="email">Email Address</label>
+            <div class="error-container">
+              <label for="email">Email Address</label>
+              <span class="error-message email-error"></span>
+            </div>
             <input
               type="email"
               name="email"
@@ -94,7 +102,10 @@
               placeholder="e.g. stephenking@lorem.com"
             />
             <!-- phone number -->
-            <label for="tel-number">Phone Number</label>
+            <div class="error-container">
+              <label for="tel-number">Phone Number</label>
+              <span class="error-message tel-error"></span>
+            </div>
             <input
               type="tel"
               name="tel-number"

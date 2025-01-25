@@ -91,13 +91,14 @@ body {
 /* next and back btn */
 .btn-container {
   background: var(--white);
-  padding: 5rem;
+  padding: 0 2rem;
 
   display: flex;
   justify-content: space-between;
   min-height: 12vh;
   align-items: center;
 }
+
 .btn {
   border: none;
   padding: 1.3rem 1.7rem;
@@ -191,12 +192,29 @@ form {
   flex-direction: column;
   gap: 5px;
 }
+.error-container {
+  display: flex;
+  justify-content: space-between;
+}
+.error-message {
+  color: var(--strawberry-red);
+  font-size: 1.3rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
 input {
   padding: 2rem 1.5rem;
   outline: none;
   border: 1px solid var(--light-gray);
   border-radius: 6px;
-  margin-bottom: 2rem;
+  margin: 0.5rem 0 2rem;
+  cursor: pointer;
+}
+input:hover {
+  border: 1px solid var(--purplish-blue);
+}
+.error {
+  border: 1px solid var(--strawberry-red);
 }
 ::placeholder {
   font-size: 1.6rem;
@@ -355,14 +373,11 @@ input {
   font-size: 1.3rem;
   color: var(--purplish-blue);
 }
-.btn-container {
-  background: #fff;
-  display: flex;
-  justify-content: space-between;
-  padding: 0 2rem;
-}
 
-/* The summary page */
+/* *************************************** */
+/* ************SUMMARY PAGE************ */
+/* *************************************** */
+
 .dynamic-container {
   background: var(--alabaster);
   border-radius: 1rem;
@@ -404,6 +419,11 @@ input {
   color: var(--purplish-blue);
   font-weight: 700;
 }
+
+/* *************************************** */
+/* ************THANK YOU PAGE************ */
+/* *************************************** */
+
 .confirmation {
   display: flex;
   flex-direction: column;

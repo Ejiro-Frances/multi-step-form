@@ -15,7 +15,10 @@ const yearlyPrice = document.querySelectorAll(".yearly-price");
 const yearlyDuration = document.querySelectorAll(".yearly-duration");
 const emptyPrice = document.querySelectorAll(".empty-p");
 
-// ////////////////////
+// get input from form
+const userNameInput = document.querySelector("#username");
+const emailInput = document.querySelector("#email");
+const userTelephoneInput = document.querySelector("#tel-number");
 
 // When a button is clicked, the hide class should be remove from one place and added to another
 
@@ -82,9 +85,36 @@ backBtn.addEventListener("click", () => {
 
 // when the next button is clicked, it shows next page
 nextBtn.addEventListener("click", () => {
-  if (currentPage < pages.length - 1) {
+  if (
+    currentPage < pages.length - 1 &&
+    userNameInput.value !== "" &&
+    userTelephoneInput.value !== "" &&
+    userTelephoneInput.value !== 11 &&
+    !emailInput.value.match(/^[A-Za-z]{1}[@]$/)
+  ) {
     currentPage++;
     showPage(currentPage);
+  }
+
+  if (userNameInput.value === "") {
+    userNameInput.classList.add("error");
+    document.querySelector(".username-error").classList.remove("hide");
+  } else if (!emailInput.value.match(/^[A-Za-z]{1}[@]$/)) {
+    emailInput.classList.add("error");
+    document.querySelector(".email-error").innerHTML =
+      "Enter a valid email address";
+  } else if (userTelephoneInput.value.length === 0) {
+    userTelephoneInput.classList.add("error");
+    document.querySelector(".tel-error").innerHTML = "This field is required";
+  } else if (userTelephoneInput.value !== 11) {
+    userTelephoneInput.classList.add("error");
+    document.querySelector(".tel-error").innerHTML =
+      "Phone number should be 11 digits";
+  } else {
+    document.querySelectorAll("input").forEach((el) => {
+      el.classList.remove("error");
+      document.querySelector(".email-error").innerHTML = "";
+    });
   }
 });
 
