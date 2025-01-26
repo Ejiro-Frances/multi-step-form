@@ -27,12 +27,17 @@ const userTelephoneInput = document.querySelector("#tel-number");
 const selectedPlan = document.querySelector(".selected-plan");
 const selectedPlanDuration = document.querySelector(".selected-plan-mon-yr");
 const selectedPlanPrice = document.querySelector(".selected-plan-price");
+
 const selectedAddon1 = document.querySelector(".selected-add-on-1");
 const selectedAddon2 = document.querySelector(".selected-add-on-2");
 const selectedAddPrice1 = document.querySelector(".selected-add-price");
 const selectedAddPrice2 = document.querySelector(".selected-add-price-2");
+
 const totalDuration = document.querySelector(".total-duration");
 const totalPrice = document.querySelector(".total-price");
+
+// Error for plan selection
+const planError = document.querySelector(".plan-error");
 
 // When a button is clicked, the hide class should be remove from one place and added to another
 
@@ -75,7 +80,7 @@ const updateStepButtons = () => {
   });
 };
 
-// when the back button is clicked, it shows next page
+// when the back button is clicked, it shows previous page
 backBtn.addEventListener("click", () => {
   if (currentPage > 0) {
     currentPage--;
@@ -87,17 +92,17 @@ backBtn.addEventListener("click", () => {
 // When the next button is clicked, validate form and plan selection before moving to the next page
 nextBtn.addEventListener("click", () => {
   const selectPlanPageIndex = 1; // Replace with the actual index of your "Select Plan" page
-  const selectedPlan = document.querySelector(".plan-box.active");
+  const selectedPlanEl = document.querySelector(".plan-box.active");
 
   // Validate the Select Plan page
   if (currentPage === selectPlanPageIndex) {
-    if (!selectedPlan) {
+    if (!selectedPlanEl) {
       // Show error message if no plan is selected
-      document.querySelector(".plan-error").classList.remove("hide");
+      planError.classList.remove("hide");
       return; // Prevent navigation to the next page
     } else {
       // Hide error message if a plan is selected
-      document.querySelector(".plan-error").classList.add("hide");
+      planError.classList.add("hide");
     }
   }
 
@@ -138,8 +143,8 @@ nextBtn.addEventListener("click", () => {
 
 // When the change plan button on the summary page is clicked, it should go to the plan page
 changePlanBtn.addEventListener("click", () => {
-  pages[pages.length - 1].classList.remove("active");
-  pages[pages.length - 3].classList.add("active");
+  pages[pages.length - 2].classList.remove("active");
+  pages[pages.length - 4].classList.add("active");
 });
 
 // initialize first page
@@ -292,9 +297,9 @@ const updateSummary = () => {
   });
 
   // Clear existing add-ons in the summary
-  document
-    .querySelectorAll(".dynamic-add-on")
-    .forEach((element) => element.remove());
+  const addOns = document.querySelectorAll(".dynamic-add-on");
+
+  addOns.forEach((element) => element.remove());
 
   // Add selected add-ons to the summary
   const dynamicContainer = document.querySelector(".dynamic-container");
@@ -317,6 +322,7 @@ const updateSummary = () => {
   const planPriceValue = parseFloat(
     selectedPlanPrice.textContent.replace(/[^0-9.]/g, "")
   );
+
   const totalPriceValue = planPriceValue + totalAddOnPrice;
 
   // Update total price and duration
