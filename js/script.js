@@ -9,6 +9,9 @@ const changePlanBtn = document.querySelector(".change-plan");
 // grab the different pages
 const pages = document.querySelectorAll(".main-content");
 
+// grab the plan boxes
+const planBoxes = document.querySelectorAll(".plan-box");
+
 // get the prices
 const monthlyPrice = document.querySelectorAll(".monthly-price");
 const yearlyPrice = document.querySelectorAll(".yearly-price");
@@ -19,6 +22,17 @@ const emptyPrice = document.querySelectorAll(".empty-p");
 const userNameInput = document.querySelector("#username");
 const emailInput = document.querySelector("#email");
 const userTelephoneInput = document.querySelector("#tel-number");
+
+// for summary
+const selectedPlan = document.querySelector(".selected-plan");
+const selectedPlanDuration = document.querySelector(".selected-plan-mon-yr");
+const selectedPlanPrice = document.querySelector(".selected-plan-price");
+const selectedAddon1 = document.querySelector(".selected-add-on-1");
+const selectedAddon2 = document.querySelector(".selected-add-on-2");
+const selectedAddPrice1 = document.querySelector(".selected-add-price");
+const selectedAddPrice2 = document.querySelector(".selected-add-price-2");
+const totalDuration = document.querySelector(".total-duration");
+const totalPrice = document.querySelector(".total-price");
 
 // When a button is clicked, the hide class should be remove from one place and added to another
 
@@ -54,37 +68,40 @@ const showPage = (index) => {
   updateButtonState();
 };
 
-// When step buttons are clicked, it shows the next page
-
-stepBtns.forEach((button, index) => {
-  button.addEventListener("click", () => {
-    button.classList.add("active");
-    currentPage = index;
-
-    showPage(currentPage);
-    button.classList.remove("active");
+// update step buttons
+const updateStepButtons = () => {
+  stepBtns.forEach((button, index) => {
+    button.classList.toggle("active", index === currentPage);
   });
-});
-
-// When step container is clicked, it shows the next page
-stepContainer.forEach((step, index) => {
-  step.addEventListener("click", () => {
-    currentPage = index;
-    showPage(currentPage);
-    button.classList.toggle("active");
-  });
-});
+};
 
 // when the back button is clicked, it shows next page
 backBtn.addEventListener("click", () => {
   if (currentPage > 0) {
     currentPage--;
     showPage(currentPage);
+    updateStepButtons();
   }
 });
 
-// when the next button is clicked, it shows next page
+// When the next button is clicked, validate form and plan selection before moving to the next page
 nextBtn.addEventListener("click", () => {
+  const selectPlanPageIndex = 1; // Replace with the actual index of your "Select Plan" page
+  const selectedPlan = document.querySelector(".plan-box.active");
+
+  // Validate the Select Plan page
+  if (currentPage === selectPlanPageIndex) {
+    if (!selectedPlan) {
+      // Show error message if no plan is selected
+      document.querySelector(".plan-error").classList.remove("hide");
+      return; // Prevent navigation to the next page
+    } else {
+      // Hide error message if a plan is selected
+      document.querySelector(".plan-error").classList.add("hide");
+    }
+  }
+
+  // Proceed to the next page only if validation passes
   if (
     currentPage < pages.length - 1 &&
     userNameInput.value !== "" &&
@@ -94,6 +111,7 @@ nextBtn.addEventListener("click", () => {
   ) {
     currentPage++;
     showPage(currentPage);
+    updateStepButtons();
   }
 
   if (userNameInput.value === "") {
@@ -126,12 +144,17 @@ changePlanBtn.addEventListener("click", () => {
 
 // initialize first page
 showPage(currentPage);
+updateStepButtons();
 
 // When the plan box is clicked, add active class
-const planBoxes = document.querySelectorAll(".plan-box");
+
 planBoxes.forEach((planBox) => {
   planBox.addEventListener("click", () => {
-    planBox.classList.toggle("active");
+    // Remove the 'active' class from all plans
+    planBoxes.forEach((box) => box.classList.remove("active"));
+    //Add the 'active, class to the clicked plan
+
+    planBox.classList.add("active");
   });
 });
 
@@ -231,16 +254,6 @@ addonElements.forEach((addOnEl) => {
 // -------------------------------------
 // SUMMARY
 // -------------------------------------
-
-const selectedPlan = document.querySelector(".selected-plan");
-const selectedPlanDuration = document.querySelector(".selected-plan-mon-yr");
-const selectedPlanPrice = document.querySelector(".selected-plan-price");
-const selectedAddon1 = document.querySelector(".selected-add-on-1");
-const selectedAddon2 = document.querySelector(".selected-add-on-2");
-const selectedAddPrice1 = document.querySelector(".selected-add-price");
-const selectedAddPrice2 = document.querySelector(".selected-add-price-2");
-const totalDuration = document.querySelector(".total-duration");
-const totalPrice = document.querySelector(".total-price");
 
 // Function to update the summary page
 const updateSummary = () => {

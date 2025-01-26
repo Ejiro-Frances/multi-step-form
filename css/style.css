@@ -228,6 +228,9 @@ input:hover {
 .select-plan {
   padding-bottom: 0.1rem;
 }
+.plan-error {
+  margin-bottom: 1.5rem;
+}
 .plan-container {
   display: grid;
   grid-template-columns: 1fr;
